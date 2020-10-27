@@ -1,4 +1,6 @@
 # FriLive
+Source code for online presentation Online Talks FRI UNIZA October 2020 
+
 
 To start your Phoenix server:
 
