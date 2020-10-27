@@ -1,0 +1,24 @@
+<section class="row">
+  <article class="column">
+    <h3>Hi <%= @name %></h3>
+    <h4>Chat</h4>
+    <%= if Enum.any?(@messages) do %>
+    <ul>
+      <%= for {user, timestamp, message} <- @messages do %>
+      <li><strong><%= user %>:</strong> <%= message %><code><%= timestamp %></code></li>
+      <% end %>
+    </ul>
+    <% end %>
+    <form phx-change="save" phx-submit="save">
+      <label for="message">Message</label>
+      <input type="text" name="message" placeholder="Your message" autocomplete="off" phx-debounce="1000"/>
+    </form>
+  </article>
+  <article class="column column-center">
+    <h3><%= @count %></h3>
+    <button type="submit" phx-click="click" phx-disable-with="Counting...">Count</button>
+    <br />
+    <button type="submit" phx-click="click_faster">Count faster</button>
+  </article>
+</section>
+
